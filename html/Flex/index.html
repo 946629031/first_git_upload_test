@@ -4,6 +4,306 @@
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="./css/index.css">
 	<link rel="stylesheet" type="text/css" href="./css/cz.css">
+	<style type="text/css">
+	/*以下内部css为了能在github上在线预览*/
+	/*******   cz.css   *******/
+		html, body, div, span, applet, object, iframe, 
+		h1, h2, h3, h4, h5, h6, p, blockquote, pre, 
+		a, abbr, acronym, address, big, cite, code, 
+		del, dfn, em, img, ins, kbd, q, s, samp, 
+		small, strike,  sub, sup, tt, var, 
+		 u, i, dl, dt, dd, ol, ul, li, 
+		fieldset, form, label, legend, 
+		table, caption, tbody, tfoot, thead, tr, th, td, 
+		article, aside, canvas, details, embed, 
+		figure, figcaption, footer, header, hgroup, 
+		menu, nav, output, section, summary, 
+		time, mark, audio, video { 
+		margin: 0; 
+		padding: 0; 
+		border: 0; 
+		font-size: 100%; 
+		font: inherit; 
+		vertical-align: baseline; 
+		} 
+		ul li{list-style: none}
+		a{ text-decoration: none;}
+		/*strong,b,{auto}*/
+
+
+
+	/*******   cz.css   *******/
+	ul{
+	margin:  2px auto !important;
+}
+
+.zero{
+	width: 1200px;
+	height: 1200px;
+	margin: 0 auto;
+	background-color: #ECECEc;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+
+.one{
+	/*display: flex;*/
+	/*justify-content: center;*/
+	width: 1200px;
+	height: 1200px;
+	margin: 0 auto;
+	background-color: #F4F4F4;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-start;
+	flex-direction: column;
+}
+
+.one li{
+	width: 150px;
+	height: 150px;
+	background-color: red;
+	margin: 5px;
+	color: #fff;
+	font-size: 38px;
+	font-weight: 900px;
+	text-align: center;
+	line-height: 150px;
+
+}
+
+.one li:nth-child(2){
+	width: 300px;
+	height: 300px;
+	line-height: 300px;
+}
+
+
+
+
+
+
+.two{
+	width: 1200px;
+	height: 1200px;
+	margin: 0 auto;
+	background-color: #ECECEC;
+	
+	
+}
+
+.two li{
+	width: 150px;
+	height: 150px;
+	background-color: red;
+	margin: 5px;
+	color: #fff;
+	font-size: 38px;
+	font-weight: 900px;
+	text-align: center;
+	line-height: 150px;
+
+}
+
+.two li:nth-child(2){
+	width: 300px;
+	height: 300px;
+	line-height: 300px;
+}
+
+
+
+
+
+.three{
+	width: 1200px;
+	height: 1200px;
+	margin: 0 auto;
+	background-color: #F4F4F4;
+	display: flex;
+	
+}
+
+.three li{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+	
+	width: 150px;
+	height: 150px;
+	background-color: red;
+	margin: 5px;
+	color: #fff;
+	font-size: 38px;
+	font-weight: 900px;
+
+}
+
+.three li:nth-child(2){
+	width: 300px;
+	height: 300px;
+}
+
+
+
+
+.four{
+	width: 1200px;
+	height: 1200px;
+	margin: 0 auto;
+	background-color: #ececec;
+	display: flex;
+}
+
+.four li{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	width: 250px;
+	height: 250px;
+	background-color: red;
+	margin: 5px;
+	color: #fff;
+	font-size: 38px;
+	font-weight: 900px;
+}
+
+.four li:nth-child(2){
+	flex-basis: 800px;
+}
+
+
+
+
+
+.five{
+	width: 1200px;
+	height: 1200px;
+	margin: 0 auto;
+	background-color: #f4f4f4;
+	display: flex;
+}
+
+.five li{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	height: 150px;
+	background-color: red;
+	margin: 5px;
+	color: #fff;
+	font-size: 38px;
+	font-weight: 900px;
+	flex-grow: 1;
+}
+
+.five li:nth-child(2){
+	flex-grow: 3;
+}
+
+
+
+
+
+
+
+
+.six{
+	width: 1200px;
+	height: 1200px;
+	margin: 0 auto;
+	background-color: #ececec;
+	display: flex;
+}
+
+.six li{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 500px;
+	height: 150px;
+	background-color: red;
+	margin: 5px;
+	color: #fff;
+	font-size: 38px;
+	font-weight: 900px;
+	flex-shrink: 1;
+}
+
+.six li:nth-child(3){
+	flex-shrink: 3;
+}
+
+
+
+
+
+
+.seven{
+	width: 1200px;
+	height: 1200px;
+	margin: 0 auto;
+	background-color: #f4f4f4;
+	display: flex;
+}
+
+.seven li{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 120px;
+	height: 800px;
+	background-color: red;
+	margin: 5px;
+	color: #fff;
+	font-size: 38px;
+	font-weight: 900px;
+	flex-shrink: 1;
+}
+
+.seven li:nth-child(3){
+	align-self: flex-end;
+}
+
+.seven li:nth-child(5){
+	align-self: center;
+}
+
+.seven li:nth-child(6){
+	flex-basis: 800px;
+	box-sizing: border-box;
+	padding: 15px;
+}
+
+
+.space-between{
+	display: flex;
+	justify-content: space-between;
+    width: 1200px;
+    height: 1200px;
+    margin: 0 auto;
+    background-color: #ececec;
+}
+
+
+.space-between li{
+	width: 150px;
+	height: 150px;
+	background-color: red;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+}
+
+
+	</style>
 </head>
 
 
