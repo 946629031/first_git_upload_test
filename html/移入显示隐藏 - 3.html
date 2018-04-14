@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">  
+<html>  
+  <head>  
+    <base href="<%=basePath%>">  
+    <title>My JSP 'test.jsp' starting page</title>  
+    <meta http-equiv="pragma" content="no-cache">  
+    <meta http-equiv="cache-control" content="no-cache">  
+    <meta http-equiv="expires" content="0">      
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">  
+    <meta http-equiv="description" content="This is my page">  
+    <style type="text/css">  
+.id1 {  
+        width: 270px;  
+        height: 35px;  
+        background-color: teal;   
+        display: block;   
+    }         
+.id2 {  
+        width: 270px;  
+        height: 70px;  
+        background-color: teal;  
+        line-height:35px;  
+        display: none;        
+    }  
+.id3 {  
+        width: 270px;  
+        height: 70px;  
+        background-color: teal;   
+        line-height:35px;     
+        display: block;   
+    }     
+    </style>  
+  </head>    
+  <body>  
+<script language="javascript">   
+  
+function displayDiv1(){  
+      
+    var oDiv1=document.getElementById("id1");  
+    var oDiv2=document.getElementById("id2");  
+    oDiv1.className="id1";  
+    oDiv2.className="id2";  
+  
+}  
+function displayDiv2(){  
+      
+    var oDiv2=document.getElementById("id2");  
+    var oDiv1=document.getElementById("id1");  
+    oDiv1.className="id2";  
+    oDiv2.className="id3";  
+}  
+  
+</script>   
+  
+<div id="id1" class="id1" onmouseover="displayDiv2()">  层一  </div>  
+<div id="id2" class="id2"  onmouseover="displayDiv2() onmouseout="displayDiv1()">  层二  </div>  
+  
+  
+  </body>  
+</html>  

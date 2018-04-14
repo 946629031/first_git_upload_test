@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>无标题文档</title>
+	<script>
+		function m_over(a) {
+			var mSubObj = a.getElementsByTagName("div")[0];
+			mSubObj.style.display = "block";
+			mSubObj.style.backgroundColor = "blue";	
+		}
+		function m_out(a) {
+			var mSubObj = a.getElementsByTagName("div")[0];
+			mSubObj.style.display = "none";
+
+		}
+	</script>
+
+</head>
+
+<body>
+	<div onmouseover="m_over(this)" onmouseout="m_out(this)" style="height:50px; width:50px;position:relative; padding: 50px;">1显示部分
+
+		<div style="width:50px;height:20px;display:none;position:absolute;">
+			<a href="1.html" style="color: red;">1隐藏部分</a>
+		</div>
+	</div>
+
+	<div onmouseover="m_over(this)" onmouseout="m_out(this)" style="width:50px; height:50px; position:relative;">2显示部分
+
+		<div style="width:50px;height:50px;display:none;position:absolute;">
+				<a href="1.html" style="color: green;">2隐藏部分</a>
+		</div>   
+	</div>  
+
+	
+</body>
+</html>
+
+
+
+

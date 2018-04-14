@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="CSS clears the default style.css">
+	<style type="text/css">
+		.banner{ width:1200px; height: 450px; background-color: #FDC7C7; margin: 20px auto; overflow: hidden; position: relative;}
+		.banner .images_all{ width: 50000px; position: absolute; left: 000px; top: 0}
+		.banner img{ width: 1200px;}
+		.banner .images_all li{ float: left;}
+
+
+		.banner .num{ position: absolute; width: 100%; bottom: 10px; left: 0; text-align: center; font-size: 0;}
+		.banner .num li{ width: 10px; height: 10px; background: #d4d4d4; border-radius: 50%; display: inline-block;/*行级块元素有默认的宽度,给父级加font-size: 0，即可去除*/ margin: 0 3px; cursor: pointer; box-shadow: 0 0 2px #888888;}
+		.banner .num .on{ background: #fff; }
+
+
+		.banner .btn{ width: 30px; height: 50px; background: rgba(0,0,0,0.3); position: absolute; top: 50%; margin-top: -25px; cursor: pointer; text-align: center; line-height: 50px; color: #fff; font-size: 40px; font-family: '宋体'; border-radius: 3px; display: none;}
+		.banner:hover .btn{ display: block; }
+		.btn_left{ left: 0; }
+		.btn_right{ right: 0; }
+	</style>
+</head>
+
+
+<body>
+	<div class="banner">
+		<ul class="images_all">
+			<li><a href="#"><img src="images/1.jpg"></a></li>
+			<li><a href="#"><img src="images/2.jpg"></a></li>
+			<li><a href="#"><img src="images/3.jpg"></a></li>
+			<li><a href="#"><img src="images/4.jpg"></a></li>
+		</ul>
+
+		<ul class="num">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+
+		<div class="btn btn_left">&lt;</div>
+		<div class="btn btn_right">&gt;</div>
+	</div>
+
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var i=0;
+			var clone = $('.banner .images_all li').first().clone();
+			$('.banner .images_all').append(clone);
+			var size=$(".banner .images_all li").length
+			$('.banner .num li').first().addClass('on')
+
+
+			/*鼠标滑入圆点*/
+			$('.banner .num li').hover(function(){
+				var index=$(this).index();
+				i=index;
+				$('.banner .images_all').stop().animate({left:-index*1200},500);
+				$(this).addClass('on').siblings().removeClass('on');
+			})
+
+
+
+			
+			/*向左按钮*/
+			$('.banner .btn_left').click(function(){
+				i++;
+				if(i==size){
+					$('.banner .images_all').css({left:0})
+					i=1;
+					// i=0;
+				}
+				$('.banner .images_all').stop().animate({left:-i*1200},500);
+				if(i==size-1){
+					$('.banner .num li').eq(0).addClass('on').siblings().removeClass('on');
+				}else{
+					$('.banner .num li').eq(i).addClass('on').siblings().removeClass('on');
+					}
+				//console.log($('.banner').html());
+			})
+
+
+			/*向右按钮*/
+			$('.banner .btn_right').click(function(){
+				i--
+				if(i==-1){
+					$('.banner .images_all').css({left:-(size-1)*1200})
+					i=size-2;
+				}
+				$('.banner .images_all').stop().animate({left:-i*1200},500)
+				$('.banner .num li').eq(i).addClass('on').siblings().removeClass('on')
+			})
+
+
+
+			/*自动轮播  定时器*/
+			var t = setInterval(function(){
+				i++;
+				if(i==size){
+					$('.banner .images_all').css({left:0})
+					i=1;
+					// i=0;
+				}
+				$('.banner .images_all').stop().animate({left:-i*1200},500);
+				$('.banner .num li').eq(i).addClass('on').siblings().removeClass('on');
+			},2000)
+
+
+
+			// /*移入banner 定时停止，移出恢复轮播*/
+			// $('.banner').hover(function(){
+			// 	clearInterval(t);
+			// },function(){t},2000)
+
+
+			/*移入banner 定时停止，移出恢复轮播*/
+			$('.banner').hover(function(){
+				clearInterval(t);
+			},
+			function(){
+				clearInterval(t);
+				t = setInterval(function(){
+				i++;
+				if(i==size){
+					$('.banner .images_all').css({left:0})
+					i=1;
+				}
+				$('.banner .images_all').stop().animate({left:-i*1200},500);
+				$('.banner .num li').eq(i).addClass('on').siblings().removeClass('on');
+				},2000)
+			})
+
+		})
+
+
+	</script>
+</body>
+</html>

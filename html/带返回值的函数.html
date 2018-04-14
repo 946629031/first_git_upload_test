@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	num1:<input type="text" id="num1">
+	<select id="op">
+		<option value="+">+</option>
+		<option value="-">-</option>
+	</select>
+	num2:<input type="text" id="num2">
+	<button onclick="calu()">提交</button>
+
+
+
+	<script type="text/javascript">
+		
+
+		function jisuan(n1,n2,oper){
+			switch(oper) {
+				case '+':
+					return n1+n2;
+				case '-':
+					return n1-n2;
+				default:
+					return "未知操作符";
+			}
+		}
+
+
+		function calu(){
+			var num1 = parseInt(document.getElementById('num1').value);
+			var num2 = parseInt(document.getElementById('num2').value);
+			var op = document.getElementById('op').value;
+			alert(jisuan(num1,num2,op))
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div class="btns"><input type="button" value="插入元素" id="creatbtn"/></div>
+	<div   id="box-one">
+		<input type="button" value="appendChild" onclick="appendChild_fun()"/>
+		<p class="con2" id="p1">1</p>
+		<p class="con2">2</p>
+		<p class="con2">3</p>
+	</div>
+	<input type="button" value="addClass" onclick="addClass()"/>
+
+
+
+<script type="text/javascript">
+	function appendChild_fun(){
+		var bone = document.getElementById("box-one");
+
+		//创建div标签
+		var btn = document.createElement("DIV");
+
+		//将div标签添加到DOM里，bone后面
+		bone.appendChild(btn);
+
+		//添加id名
+		btn.id = 'btn';
+		//添加class
+		btn.classList.add("active");
+		//删除class
+		// btn.classList.remove("active");
+
+		// 创建文本节点
+		var t=document.createTextNode("CLICK ME");
+		btn.appendChild(t);
+
+		// //原生js的append()方法会将()内的内容作为字符串添加
+		// bone.append("<p class='three'>我是子元素append</p>");
+		// bone.after("<p class='three'>我是子元素after</p>");		
+	};
+
+	function addClass(){
+		//删除class
+		btn = document.getElementById("btn");
+		btn.classList.remove("active");
+	};
+	
+
+		// window.onload =function () {
+		// 	var btn = document.getElementById("creatbtn");
+
+		// 	btn.onclick =function() {
+		// 		insertEle();
+		// 	}
+		// }
+		// function insertEle() { 
+		// 	var oTest = document.getElementById("box-one");
+		// 	var newNode = document.createElement("div");
+
+		// 	newNode.innerHTML =" This is a newcon ";
+		// 	//oTest.appendChild(newNode);
+		// 	oTeset.insertBefore(newNode,null); // 这两种方法均可实现
+		// }
+</script>
+
+</body>
+</html>

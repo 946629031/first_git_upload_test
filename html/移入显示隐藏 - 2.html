@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.aa{
+			width: 100px; height: 100px; background-color: #eee;
+		}
+		.pp{
+			width: 100px; height: 100px; background-color: #ccc; display: none;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- <div class="aa" onmouseover="m_over(this)" onmouseout="m_out(this)">111<div class="pp">222</div></div> -->
+	<div class="aa" onmouseover="m_over()" onmouseout="m_out()">111</div>
+	<div class="pp" id="cc">222</div>
+	
+	
+
+	<script type="text/javascript">
+		function m_over(){
+			var content = document.getElementById('cc');
+			content.style.display = "block"
+		}
+		function m_out(){
+			document.getElementById('cc').style.display = "none";
+		}
+
+	</script>
+
+	<!-- <script type="text/javascript">
+		function m_over(a){
+			var content = a.getElementsByTagName('div')[0];
+			content.style.display = "block";
+		}
+		function m_out(a){
+			var content = a.getElementsByTagName('div')[0];
+			content.style.display = "none";
+		}
+	</script> -->
+</body>
+</html>

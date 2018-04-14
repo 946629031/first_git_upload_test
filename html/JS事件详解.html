@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<div id="div">
+	<button id="btn1">按钮</button>
+	<a href="http://www.jikexueyuan.com" id="aid">极客学院</a>
+</div>
+
+<script type="text/javascript">
+		document.getElementById('btn1').addEventListener('click',showType);
+		document.getElementById('div').addEventListener('click',showDiv);
+		document.getElementById('aid').addEventListener('click',showA);
+
+		function showType(event){
+			alert(event.type);
+			alert(event.target)
+			event.stopPropagation();	//阻止事件冒泡
+		}
+		function showDiv(){
+			alert('div');
+		};
+		function showA(event){
+			event.stopPropagation();	//阻止事件冒泡
+			event.preventDefault();		//阻止事件默认行为
+		}
+
+
+		// function demo(a,b){
+		// 	var sum = a+b;
+		// 	return sum;
+		// }
+		// var v1 = demo(10,30);
+		// alert(v1);
+		// document.write(demo(10,30)+"<br/>");
+		// document.write(v1+".20");
+
+
+
+
+		// //************带参数的函数************//
+		// //现在有10组数，求他们的和
+
+		// //求10和20的和
+		// function demo_old(){
+		// 	var a = 10;
+		// 	var b = 20;
+		// 	var sum = a+b;
+		// }
+		// demo_old();
+
+		// //求100和200的和
+		// function demo_old1(){
+		// 	var a = 100;
+		// 	var b = 200;
+		// 	var sum = a+b;
+		// }
+		// demo_old1();	//这样做的话，就已经更改了方法了，也就是说要算10组数，就得写10各函数。很显然这并不是最好的解决方法
+
+
+		// //************带参数的函数************//
+		// function demo1(a,b){
+		// 	var sum = a+b;
+		// 	alert(sum);
+		// }
+		// demo1(10,20);
+		// demo1(100,200;)
+
+
+
+
+
+</script>
+</body>
+</html>

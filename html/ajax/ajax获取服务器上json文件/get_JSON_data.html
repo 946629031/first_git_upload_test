@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="pid" style="min-width: 100px; height: 100px; background-color: lightred; border: solid 1px #000;"></div>
+
+
+<script type="text/javascript">
+
+
+	var request = new XMLHttpRequest();
+	request.open("GET", "http://design.gztata.com/x_xiaochengxu/data.json");
+	request.send();
+	request.onreadystatechange = function() {
+		if (request.readyState===4 && request.status===200) { 
+		// 请求已完成且响应已就绪  成功状态码，表示请求正常处理完毕
+			var data = JSON.parse(request.responseText);
+			alert(data.name);
+			document.getElementById('pid').innerHTML = request.responseText;
+		} 
+	}
+
+	
+</script>
+
+</body>
+</html>

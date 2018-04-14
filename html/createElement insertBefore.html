@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="http://www.softwhy.com/" />
+<title>insertBefore()函数-蚂蚁部落</title> 
+<script type="text/javascript"> 
+window.onload=function()
+{
+  var obox=document.getElementById("box");
+  var lis=document.getElementsByTagName("li");
+  var newLi=document.createElement("li");
+  newLi.innerHTML="新蚂蚁部落";
+  obox.insertBefore(newLi,lis[0]);
+
+  // XXXX  DOM中没有提供insertAfter方法
+  // obox.insertAfter(newLi,lis[1]);
+}
+</script> 
+</head> 
+<body> 
+<ul id="box">
+  <li>蚂蚁部落一</li>
+  <li>蚂蚁部落二</li>
+  <li>蚂蚁部落三</li>
+  <li>蚂蚁部落四</li>
+</ul>
+</body> 
+</html>
+
+

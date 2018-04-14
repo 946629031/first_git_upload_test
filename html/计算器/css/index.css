@@ -1,0 +1,76 @@
+.Calculator{
+	margin: 1rem auto;
+	width: 25rem;
+	height: 44rem;
+	border: 0.0625rem solid #202020;
+	box-sizing: border-box;
+}
+
+.output{
+	background-color: #202020;
+	width: 100%;
+	height: 10rem;
+	color: #fff;
+	display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 4rem;
+    padding-right: 1.5rem;
+    box-sizing: border-box;
+}
+
+
+.input_1{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 2rem;
+/*	font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;*/
+	font-weight: 100;
+	color: #434343;
+}
+
+
+.input_1 li{
+/*	flex: 0 0 25%;*/
+/*	width: 25%;
+	height: 50px;*/
+	width: 25%;
+	height: 6.8rem;
+	background-color: #c5c6c9;
+	border: 0.03125rem solid #848586;
+	flex-wrap: wrap;
+	box-sizing: border-box;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.input_1 li:nth-child(4){
+	background-color: #f99012;
+	color: #fff;
+}
+
+.input_5 li:nth-child(3){
+	background-color: #f99012;
+	color: #fff;
+}
+
+
+#zero{
+	width: 50%;
+}
+
+
+.input li:active{
+	background-color:#B8B8B8;
+}
+
+.input_1 li:nth-child(4):active{
+	background-color: #C58231;
+}
+
+.input_5 li:nth-child(3):active{
+	background-color: #C58231;
+}

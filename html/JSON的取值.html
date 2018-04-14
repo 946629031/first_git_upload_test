@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		var data = '{"0":{"美的":49,"三星":35,"海信":25,"格力":16,"方太":14}, "1":{"美的":49,"三星":35,"海信":25,"格力":16,"方太":14}}';
+		alert(typeof(data));
+
+
+		var data2 = {"0":{"美的":49,"三星":35,"海信":25,"格力":16,"方太":1,"ins":"super man!"}, "1":{"美的":49,"三星":35,"海信":25,"格力":16,"方太":14}};
+		alert(typeof(data2));
+
+		console.log(data2[0].美的);
+		console.log(data2[0].ins);
+
+		var fun = function(){ alert(12333)};
+		fun();
+		alert(typeof(fun));
+
+	</script>
+
+</body>
+</html>
+
+
