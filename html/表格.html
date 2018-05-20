@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<table border="1" cellspacing="0" align="center" width="800px" height="400px">
+		<caption style="font-size: 40px;">学生成绩表</caption>
+		<thead>
+			<tr>   <!-- 表格的行 -->
+				<th colspan="7">2016-2017年第一学期1001班期末考试成绩</th>  
+				<!-- 表头单元格，一个 th 表示表格的一列, colspan="7"表示占7列 -->
+			</tr>
+		</thead>
+
+		<tbody align="center">
+			<tr>
+				<td>学号</td>	<!-- td表示普通单元格 -->
+				<td>姓名</td>
+				<td>课程</td>
+				<td>单科成绩</td>
+				<td>总成绩</td>
+				<td>平均成绩</td>
+				<td>备注</td>
+			</tr>	
+			<tr>
+				<td rowspan="3">01</td>		 <!-- rowspan="3"表示占三行 -->
+				<td rowspan="3">张三</td>
+				<td>数学</td>
+				<td>79</td>
+				<td rowspan="3"></td>
+				<td rowspan="3"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>语文</td>
+				<td>89</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>英语</td>
+				<td>90</td>
+				<td></td>
+			</tr>
+
+			<!-- 第二个同学 -->
+			<tr>
+				<td rowspan="3">02</td>		 <!-- rowspan="3"表示占三行 -->
+				<td rowspan="3">李四</td>
+				<td>数学</td>
+				<td>79</td>
+				<td rowspan="3"></td>
+				<td rowspan="3"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>语文</td>
+				<td>89</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>英语</td>
+				<td>90</td>
+				<td></td>
+			</tr>
+
+			<!-- 第三个同学 -->
+			<tr>
+				<td rowspan="3">03</td>		 <!-- rowspan="3"表示占三行 -->
+				<td rowspan="3">王五</td>
+				<td>数学</td>
+				<td>79</td>
+				<td rowspan="3"></td>
+				<td rowspan="3"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>语文</td>
+				<td>89</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>英语</td>
+				<td>90</td>
+				<td></td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="7">全班总人数： 人，实际参考人数： 人，全班平均成绩： 分，班级合格率：</td>
+			</tr>
+		</tfoot>
+	</table>
+
+</body>
+</html>

@@ -1,13 +1,43 @@
+.content_select{
+    margin: 0 auto;
+    width: 940px;
+    font-size: 14px;
+    color: #7E7E7E;
+    line-height: 60px;
+    font-family: "SF Pro SC","HanHei SC","SF Pro Text","Myriad Set Pro",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","SF Pro Icons","Apple Legacy Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+
+.content_inner{
+    display: inline-block;
+}
+
+.content_select span{
+    color: red;
+}
+
+.content_select p{
+    color: #323232;
+    display: inline;
+}
+
+.selected{
+    display: inline-block;
+    border: solid 1px #C8C8C8;
+    line-height: 24px;
+    cursor: pointer;
+}
+
 .content{
     margin: 0 auto;
     width: 940px;
+    font-size: 12px;
+    font-family: "SF Pro SC","HanHei SC","SF Pro Text","Myriad Set Pro",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","SF Pro Icons","Apple Legacy Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif;
 }
 
 .form_box{
     width: 100%;
-    height: 800px;
     border: solid 1px #EFEFEF;
-    padding: 15px;
+    padding: 0 15px;
     box-sizing: border-box;;
 }
 
@@ -15,30 +45,39 @@
     border-bottom: dashed 1px #EFEFEF;
 }
 
+.form_box > ul div:nth-child(2){
+    width: 750px;
+}
+
 .content_brands{
     display: flex;
     justify-content: space-between;
+    margin-top: 15px;
 }
 
 .all_brands ul li{
     display: inline-block;
     margin: 0 30px 20px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .brand{
     color: #A8A8A8;
-    width: 150px;
+    width: 80px;
 }
 
 .more_btn{
     display: flex;
     justify-content: flex-end;
-    color: #A8A8A8;
-    /*width: 120px;*/
+    color: #686868;
 }
 
 .more_btn:hover{
+    color: red;
+    cursor: pointer;
+}
+
+.all_brands ul li:hover{
     color: red;
     cursor: pointer;
 }

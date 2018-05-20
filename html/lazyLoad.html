@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>前端如何实现图片懒加载(lazyload) 提高用户体验</title>
+	<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<style>
+        img { margin-bottom: 50px;}
+        div:nth-child(1){ height: 3000px; background: red;}
+        .alert_window{ position: fixed; top: 500px; left: 50px; display: none; }
+    </style>
+</head>
+<body>
+	<div>
+	    <img src="default.jpg" data-src="http://img.hb.aicdn.com/73d33e47c6e83b27d984438b87e015387a7aa0e8123cfa-U1vkEc_fw658" alt="">
+	    <img src="default.jpg" data-src="http://img.hb.aicdn.com/f639a9888085ae47e781d610f35d10a37f8dc16611e920-BwNmWS_fw658" alt="">
+	    <img src="default.jpg" data-src="http://ww1.sinaimg.cn/large/006y8mN6gw1fa7kaed2hpj30sg0l9q54.jpg" alt="">
+	    <img src="default.jpg" data-src="http://ww1.sinaimg.cn/large/006y8mN6gw1fa7kaed2hpj30sg0l9q54.jpg" alt="">
+	    <img src="default.jpg" data-src="http://ww4.sinaimg.cn/large/006y8mN6gw1fa5obmqrmvj305k05k3yh.jpg" alt="">
+	    <img src="default.jpg" data-src="http://ww4.sinaimg.cn/large/006y8mN6gw1fa5obmqrmvj305k05k3yh.jpg" alt="">
+	    <img src="default.jpg" data-src="http://ww4.sinaimg.cn/large/006y8mN6gw1fa5obmqrmvj305k05k3yh.jpg" alt="">
+	    <img src="default.jpg" data-src="http://ww4.sinaimg.cn/large/006y8mN6gw1fa5obmqrmvj305k05k3yh.jpg" alt="">
+	    <img src="default.jpg" data-src="http://ww1.sinaimg.cn/large/006y8mN6gw1fa7kaed2hpj30sg0l9q54.jpg" alt="">
+	    <img src="default.jpg" data-src="http://ww4.sinaimg.cn/large/006y8mN6gw1fa5obmqrmvj305k05k3yh.jpg" alt="">
+	    <img src="default.jpg" data-src="http://ww4.sinaimg.cn/large/006y8mN6gw1fa5obmqrmvj305k05k3yh.jpg" alt="">
+    </div>
+    <div class="alert_window">$(window).scrollTop() > 800</div>
+</body>
+
+	<script>
+		$(function(){
+
+			// 懒加载js
+		    var n = 0,
+		        imgNum = $("img").length,
+		        img = $('img');
+		    lazyload();
+		    $(window).scroll(lazyload);
+		    function lazyload(event) {
+		        for (var i = n; i < imgNum; i++) {
+		            if (img.eq(i).offset().top < parseInt($(window).height()) + parseInt($(window).scrollTop())) {
+		                if (img.eq(i).attr("src") == "default.jpg") {
+		                    var src = img.eq(i).attr("data-src");
+		                    img.eq(i).attr("src", src);
+		                    n = i + 1;
+		                }
+		            }
+		        }
+		    };
+
+		    // 滚动提示scrollTop js
+		    $(window).scroll(function(){
+	    		if ($(window).scrollTop() > 800) {
+		    		// alert('you scrollTop more than 2000px!');
+		    		$('.alert_window').fadeIn();// 开始淡入
+		    		x ++;
+		    	} else{
+					$(".alert_window").fadeOut(); // 如果小于等于 200 淡出
+				}
+		    });
+		})
+	</script>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>s.省市选择:读取json</title>
+    <script type="text/javascript" src="../jquery_lib/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="./all_province_city_data.json"></script>
+</head>
+<body>
+    
+    <select name="pro" id="proSel"></select>
+    <select name="city" id="citySel"></select>
+    <div id="outputText"></div>
+
+    <script type="text/javascript">
+
+      $(function(){
+        // 初始化省的数据
+        initProSel();
+      });
+
+      // 省的下啦列表的初始化
+      function initProSel(){
+        var strHTMLArray = [];
+        for(var i = 0; i < data.length; i ++){
+          var proName = data[i].name;
+          // strHTMLArray.push(proName);
+          strHTMLArray.push('<option value="' + proName + '">' + proName + '</option>')
+        };
+        $('#proSel').html(strHTMLArray.join());
+        // console.log(strHTMLArray);
+      
+
+        // 给省的select标签绑定change事件
+        $('#proSel').change(function(){
+          var proName = $('#proSel').val();
+          for( var j = 0; j < data.length; j++){
+            if (data[j].name == proName) {
+              var cities = data[j].cities;
+              initCityes(cities);
+            }
+          }
+        });
+
+        // 触发省change()的事件处理程序
+        $('#proSel').triggerHandler('change');
+      };
+
+
+      // 初始化城市的信息
+      function initCityes(cities){
+        var strHTMLArray = [];
+        for(var i = 0; i < cities.length; i++){
+          strHTMLArray.push('<option value="' + cities[i] + '">' + cities[i] + '</option>')
+        };
+        $('#citySel').html(strHTMLArray.join(''));
+      };
+
+
+    </script>
+
+    
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

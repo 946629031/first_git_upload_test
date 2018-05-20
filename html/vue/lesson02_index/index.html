@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vue从html开始</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="myApp">
+      {{ message }}
+    </div>
+
+    <script>
+        var myApp = new Vue({
+          el: '#myApp',
+          data: {
+            message: 'Hello Vue.js World!'
+          }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vue if & for 条件与循环</title>
+    <meta charset="utf-8">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+
+    <div id="myApp">
+        <h3>游戏列表</h3>
+        <div v-if="seen">2017最新发售</div>
+        <ol>
+            <li v-for="game in games">{{game.title}} / {{game.price}}元</li>
+        </ol>
+    </div>
+
+    <script>
+        var myApp = new Vue({
+            el: '#myApp',
+            data: {
+                seen: true,
+                games: [
+                    {title:'勇者斗恶龙', price:400},
+                    {title:'超级马里奥', price:380},
+                    {title:'我的世界', price:99},
+                ],
+            },
+        });
+    </script>
+</body>
+</html>

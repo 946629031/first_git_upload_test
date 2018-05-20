@@ -7,8 +7,18 @@
     <link rel="stylesheet" type="text/css" href="./css/index.css">
 </head>
 <body>
-    <!-- 参考链接：https://s.taobao.com/search?q=%E7%94%B5%E8%84%91&imgfile=&commend=all&ssid=s5-e&search_type=item&sourceId=tb.index&spm=a21bo.2017.201856-taobao-item.1&ie=utf8&initiative_id=tbindexz_20170306&cps=yes&ppath= -->
+    <!-- 参考链接：
+        https://s.taobao.com/search?q=%E7%94%B5%E8%84%91&imgfile=&commend=all&ssid=s5-e&search_type=item&sourceId=tb.index&spm=a21bo.2017.201856-taobao-item.1&ie=utf8&initiative_id=tbindexz_20170306&cps=yes&ppath=
+         -->
 
+
+    <!-- 所选分类 -->
+    <div class="content_select">所有分类 > 
+        <div class="content_inner"></div>
+        <p>共 <span>35324</span> 款相关产品</p>
+    </div>
+
+    <!-- 分类列表 -->
     <div class="content">
         <div class="form_box">
 
@@ -18,7 +28,7 @@
                 <div class="all_brands">
                     <ul>
                         <li>惊天华盛</li>
-                        <li>名龙唐</li>
+                        <li><p>名龙唐</p></li>
                         <li>华南金牌</li>
                         <li>金河田</li>
                         <li>HP</li>
@@ -56,9 +66,68 @@
             </ul>
 
 
+            <!-- 内存容量 -->
+            <ul class="content_brands">
+                <div class="brand">内存容量：</div>
+                <div class="all_brands">
+                    <ul>
+                        <li>512GB</li>
+                        <li>256GB</li>
+                        <li>128GB</li>
+                        <li>64GB</li>
+                        <li>32GB</li>
+                        <li>16GB</li>
+                        <li>12GB</li>
+                        <li>8GB</li>
+                        <li>8GBx2根</li>
+                        <li>8g</li>
+                    </ul>
+                </div>
+                <div class="more_btn">更多∨</div>
+            </ul>
+
+
+            <!-- CUP类型 -->
+            <ul class="content_brands">
+                <div class="brand">CUP类型：</div>
+                <div class="all_brands">
+                    <ul>
+                        <li>Intel/英特尔酷睿</li>
+                        <li>Intel/英特尔至强E5</li>
+                        <li>Intel/英特尔酷睿i7</li>
+                        <li>Core/酷睿i5</li>
+                        <li>INTEL XEON</li>
+                        <li>AMD-FX</li>
+                        <li>Celeron/赛扬</li>
+                    </ul>
+                </div>
+                <div class="more_btn">更多∨</div>
+            </ul>
+
+
+
+            <!-- 筛选条件 -->
+            <ul class="content_brands">
+                <div class="brand">筛选条件：</div>
+                <div class="all_brands">
+                    <ul>
+                        <li>硬盘容量 v</li>
+                        <li>适用场景 v</li>
+                        <li>显卡类型 v</li>
+                        <li>核心数 v</li>
+                        <li>相关分类 v</li>
+                    </ul>
+                </div>
+                <div class="more_btn">更多∨</div>
+            </ul>
 
         </div>
     </div>
 
+    <button class="getJSONdata">getJSONdata</button>
+    <div class="jsondata"></div>
+
+    <script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="./js/index.js"></script>
 </body>
 </html>
