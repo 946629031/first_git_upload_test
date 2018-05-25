@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="swiper-4.2.6.min.css">
+	<style type="text/css">
+		.swiper-container {
+		    width: 600px;
+		    height: 300px;
+		    border:1px solid #f00;
+		}  
+
+		.swiper-container.banner {
+		    width: 800px;
+		    height: 500px;
+		    border:1px solid #f00;
+		    background: #ff000020;
+		}  
+
+		.swiper-container2 {
+		    width: 600px;
+		    height: 300px;
+		    border: 1px solid #ccc;
+		}  
+	</style>
+</head>
+<body>
+
+	<!-- swiper 使用文档地址：http://www.swiper.com.cn/usage/index.html -->
+	<!-- 如何在一个页面用多个swiper插件：https://blog.csdn.net/voke_/article/details/70787846 -->
+
+	<!-- swiper start -->
+	<div class="swiper-container">
+	    <div class="swiper-wrapper">
+	        <div class="swiper-slide">Slide 1</div>
+	        <div class="swiper-slide">Slide 2</div>
+	        <div class="swiper-slide">Slide 3</div>
+	    </div>
+	    <!-- 如果需要分页器 -->
+	    <div class="swiper-pagination"></div>
+	    
+	    <!-- 如果需要导航按钮 -->
+	    <div class="swiper-button-prev"></div>
+	    <div class="swiper-button-next"></div>
+	    
+	    <!-- 如果需要滚动条 -->
+	    <div class="swiper-scrollbar"></div>
+	</div>
+	<!-- swiper end -->
+
+	<!-- swiper1 start -->
+	<div class="swiper-container banner">
+	    <div class="swiper-wrapper">
+	        <div class="swiper-slide">Slide 1</div>
+	        <div class="swiper-slide">Slide 2</div>
+	        <div class="swiper-slide">Slide 3</div>
+	    </div>
+	    <!-- 如果需要分页器 -->
+	    <div class="swiper-pagination banner"></div>
+	    
+	    <!-- 如果需要导航按钮 -->
+	    <div class="swiper-button-prev"></div>
+	    <div class="swiper-button-next"></div>
+	    
+	    <!-- 如果需要滚动条 -->
+	    <!-- <div class="swiper-scrollbar "></div> -->
+	</div>
+	<!-- swiper1 end -->
+
+
+	<!-- swiper2 start -->
+	<div class="swiper-container swiper-container-horizontal case" style="border:1px solid #ccc;">
+	    <div class="swiper-wrapper">
+	      <div class="swiper-slide swiper-slide-active" style="width: 1600px;">Slide 1</div>
+	      <div class="swiper-slide swiper-slide-next" style="width: 1600px;">Slide 2</div>
+	      <div class="swiper-slide" style="width: 1600px;">Slide 3</div>
+	      <div class="swiper-slide" style="width: 1600px;">Slide 4</div>
+	      <div class="swiper-slide" style="width: 1600px;">Slide 5</div>
+	      <div class="swiper-slide" style="width: 1600px;">Slide 6</div>
+	      <div class="swiper-slide" style="width: 1600px;">Slide 7</div>
+	      <div class="swiper-slide" style="width: 1600px;">Slide 8</div>
+	      <div class="swiper-slide" style="width: 1600px;">Slide 9</div>
+	      <div class="swiper-slide" style="width: 1600px;">Slide 10</div>
+	    </div>
+		
+		<!-- 如果需要导航按钮 -->
+		    <div class="swiper-button-prev"></div>
+		    <div class="swiper-button-next"></div>
+
+	    <!-- 如果需要滚动条 -->
+	    <div class="swiper-scrollbar"></div>
+
+	    <!-- Add Pagination -->
+	    <div class="swiper-pagination swiper-pagination-bullets case">
+	    	<span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span>
+	    </div>
+	  <span class="swiper-notification2" aria-live="assertive" aria-atomic="true"></span>
+	</div>
+	<!-- swiper2 end -->
+
+
+
+
+
+	<script src="swiper-4.2.6.min.js"></script>
+
+	<!-- 初始化swiper start-->
+	<script>
+	var mySwiper = new Swiper ('.swiper-container', {
+	    direction: 'horizontal',
+	    loop: true,
+	    
+	    // 如果需要分页器
+	    pagination: {
+	      el: '.swiper-pagination',
+	    },
+	    
+	    // 如果需要前进后退按钮
+	    navigation: {
+	      nextEl: '.swiper-button-next',
+	      prevEl: '.swiper-button-prev',
+	    },
+	    
+	    // 如果需要滚动条
+	    scrollbar: {
+	      el: '.swiper-scrollbar',
+	    },
+	});  
+
+	var mySwiper1 = new $('.banner').Swiper ('.swiper-container', {
+	    direction: 'horizontal',
+	    loop: true,
+	    
+	    // 如果需要分页器
+	    pagination: {
+	      el: '.banner .swiper-pagination1',
+	    },
+	    
+	    // 如果需要前进后退按钮
+	    navigation: {
+	      nextEl: '.swiper-button-next',
+	      prevEl: '.swiper-button-prev',
+	    },
+	    
+	    // 如果需要滚动条
+	    scrollbar: {
+	      el: '.swiper-scrollbar1',
+	    },
+	});     
+
+
+
+	var mySwiper2 = new $('.case').swiper ('.swiper-container', {
+	    direction: 'horizontal',
+	    loop: true,
+	    
+	    // 如果需要分页器
+	    pagination: {
+	      el: '.case .swiper-pagination',
+	    },
+	    
+	    // 如果需要前进后退按钮
+	    navigation: {
+	      nextEl: '.swiper-button-next',
+	      prevEl: '.swiper-button-prev',
+	    },
+	    
+	    // 如果需要滚动条
+	    scrollbar: {
+	      el: '.swiper-scrollbar',
+	    },
+	});     
+	</script>
+	<!-- 初始化swiper end-->
+
+	
+</body>
+</html>
