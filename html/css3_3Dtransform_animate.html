@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>css3_3Dtransform_animate</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<!-- css3 transform: rotate属性 start -->
+	<div style="background: #cccccc10; padding: 40px 0;">
+		<div style="text-align: center; font-size: 20px;">css3 transform: rotate属性</div>
+
+		<div class="container" ontouchstart="this.classList.toggle('hover');">
+		    <div class="box box1">
+		        <span>rotateX</span>
+		    </div>
+		    <div class="box box2">
+		        <span>back</span>
+		    </div>
+		</div>
+		<div class="container" ontouchstart="this.classList.toggle('hover');">
+		    <div class="box box3">
+		        <span>rotateY</span>
+		    </div>
+		    <div class="box box4">
+		        <span>back</span>
+		    </div>
+		</div>
+		<div class="container" ontouchstart="this.classList.toggle('hover');">
+		    <div class="box box6">
+		        <span>back</span>
+		    </div>
+		    <div class="box box5">
+		        <span>rotateZ</span>
+		    </div>
+		</div>
+	</div>
+
+	<style>
+		.container{
+		    perspective: 400px;
+		    transform-style: preserve-3d;
+		}
+		
+		.container, .box{
+		    width: 150px;
+		    height: 80px;
+		    margin: 10px auto;
+		}
+		.box{
+		    backface-visibility: hidden;
+		    transition: 1s;
+		    transform-style: preserve-3d;
+		    position: absolute;
+		    text-align: center;
+		}
+
+		.box1,.box3,.box5{background-color: pink;}
+		.box2,.box4,.box6{background-color: red;}
+		.box2{transform: rotateX(-180deg);}
+		.box4{transform: rotateY(-180deg);}
+		.box5{transform-origin:left;}
+		.box6{transform-origin:right;}
+
+		span{
+		    font-size: 20px;
+		    line-height: 80px;
+		}
+
+		.container:hover .box1{transform: rotateX(180deg);}
+		.container:hover .box2{transform: rotateX(0deg);}
+		.container:hover .box3{transform: rotateY(180deg);}
+		.container:hover .box4{transform: rotateY(0deg);}
+		.container:hover .box5{transform: rotateZ(180deg);}
+		.container:hover .box6{transform: rotateZ(-180deg);}
+	</style>
+	<!-- css3 transform: rotate属性 end -->
+
+
+
+
+
+	<!-- css3 3D animate start -->
+	<div style="background: #cccccc30; padding: 40px 0;">
+		<div style="text-align: center; font-size: 20px;">css3 3D animate</div>
+
+		<div class="boxx boxx1">font</div>
+		<div class="boxx boxx4">font</div>
+		<div class="boxx boxx2">font</div>
+
+		<div class="trigger">
+			<div class="boxx3 boxx">鼠标放上来</div>
+		</div>
+	</div>
+
+	<style>
+		.boxx{width: 200px; height: 100px; background: pink; margin: 10px auto; transition: 1s; text-align: center; line-height: 100px;}
+		.boxx1:hover{ transform: rotateY(180deg); }
+		.boxx2{ animation: blink 1s infinite; }
+		
+		.boxx4{ animation: fanz 1s linear infinite; }
+		
+		.trigger{ border: 5px solid #ccc; width: 200px; height: 100px; background: #222; margin: 10px auto; transition: 1s; text-align: center; line-height: 100px;}
+		.boxx3{margin: 0;}
+		.trigger:hover .boxx3{ transform: translate(200px, 150px) rotate(20deg); }
+
+		@keyframes blink{
+			0%{opacity: 0;}
+			50%{opacity: 1;}
+			100%{opacity: 0;}
+		}
+		@keyframes fanz{
+			0%{transform: rotateY(0deg);}
+			100%{transform: rotateY(360deg);}
+		}
+	</style>
+	<!-- css3 3D animate end -->
+
+
+
+
+
+
+	<!-- transform-style: preserve-3d start -->
+		<div style="text-align: center; font-size: 20px; padding-top: 60px;">transform-style: preserve-3d;<br><span style="font-size: 14px;">取消preserve-3d属性试试</span></div>
+		<div class="parent">
+			<div style="text-align: center; font-size: 20px;">transform-style: preserve-3d;</div>
+			<dir class="child1"></dir>
+			<dir class="child2"></dir>
+		</div>
+
+		<style type="text/css">
+			.parent{ width: 600px; height: 600px; margin: 100px auto; background: #f50; transform: rotateX(60deg) rotateZ(40deg); transform-style: preserve-3d;}
+			.child1{ width: 200px; height: 200px; background: #080; transform: translateZ(30px) rotateX(50deg); }
+			.child2{ width: 400px; height: 400px; background: #08f; transform: translateZ(50px) rotateY(120deg); }
+		</style>
+	<!-- transform-style: preserve-3d end -->
+
+
+
+
+
+
+
+
+	<!-- transform-style: preserve-3d 222 start -->
+	<div style="background: #cccccc20">
+		<div style="text-align: center; margin: 0 auto;  font-size: 20px; padding-top: 60px;">transform-style: preserve-3d;<br><span style="font-size: 14px;">鼠标放上去试试</span></div>
+		<div class="wrap">  
+		    <div class="spin">  
+		        <div class="rotate">  
+		            <img src="images/cardKingClub.png" alt="" width="142" height="200" />
+		            <span>font</span>
+		        </div>  
+		    </div>  
+		</div>  
+		<div class="wrap">  
+		    <div class="spin">  
+		        <div class="rotate three-d">  
+		            <img src="images/cardKingClub.png" alt="" width="142" height="200" />
+		            <span>font</span>
+		        </div>  
+		    </div>  
+		</div>
+	</div>
+
+	<style>
+		.wrap {width: 500px; height: 300px; margin: 30px auto; position: relative; background: url(images/bg-grid.jpg) no-repeat center center; background-size: 100% 100%; }
+		/*设置动画*/  
+		@keyframes spin{   
+		    0%{transform:rotateY(0deg) }
+		    100%{transform:rotateY(360deg) }
+		}   
+		.spin {width: 142px; height: 200px; position: absolute; top: 50%; left: 50%; margin-left: -72px; margin-top: -101px; border: 1px dashed orange; cursor: pointer; 
+			transform-style: preserve-3d; }
+
+		/*调用动画*/  
+		.spin:hover{animation:spin 5s linear infinite; }
+		.rotate {background: url(images/cardKingClub.png) no-repeat center; background-size: 100% 100%; border: 5px solid hsla(50,50%,50%,.9); 
+			transform: perspective(200px) rotateY(45deg); }
+
+		.rotate img{width: 60px; height: 60px; background: pink; border: 1px solid green;
+		    transform: rotateX(15deg) translateZ(10px);   
+		    transform-origin: 0 0 40px;   
+		}
+		.rotate span{width: 60px; height: 60px; background: pink; display: block; border: 1px solid green; 
+			transform: rotateX(15deg) translateZ(10px); 
+			transform-origin: 0 0 40px; } 
+
+		/*改变transform-style的默认值*/
+		.three-d {transform-style: preserve-3d; } 
+	</style>
+	<!-- transform-style: preserve-3d 222 end -->
+
+
+
+
+
+
+	<div style="width: 400px; margin: 0 auto; text-align: center; padding-bottom: 200px;">
+		<h6>参考文档</h6>
+		<a href="https://www.cnblogs.com/xuan52rock/p/4434183.html" target="_blank">CSS3 Transform的perspective属性</a><br>
+		<a href="http://www.zhangxinxu.com/wordpress/2012/09/css3-3d-transform-perspective-animate-transition/" target="_blank">好吧，CSS3 3D transform变换，不过如此</a><br>
+		<a href="https://www.cnblogs.com/easy-blue/p/5169866.html" target="_blank">CSS3 Transform的perspective属性</a><br>
+		<p>create on 2018-6-13 18:22:06</p>
+	</div>
+</body>
+
+</html>
