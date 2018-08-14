@@ -1,0 +1,62 @@
+		// 数组去重
+		// 方法一，indexOf 方法
+		var t = [90,8,34,8,2,39,87,34,22,10];
+		console.log(t);
+ 
+		var arr = [];
+		arr[0] = t[0];
+ 
+		for ( var i = 1; i < t.length; i++){
+			if (arr.indexOf(t[i]) == -1) {
+				arr.push(t[i]);
+			}
+		}
+ 
+		console.log(arr);
+ 
+ 
+ 
+ 
+		// 数组去重
+		// 方法二：不用indexOf  (indexOf不兼容ie8)
+		// 思路：将原数组中每个值分别取出，然后将它依次跟新数组对比  看新数组中是否有这个值，没有则将其push到新数组中
+		var t = [90,8,34,8,2,39,87,34,22,10];
+		console.log(t);
+ 
+		var arr = [];
+		arr[0] = t[0];
+ 
+		for (var i = 1; i < t.length; i++){
+ 
+			for (var k = 0; k < arr.length; k++){
+				if (t[i] === arr[k]) {
+					break;
+				}
+			}
+			if (k===arr.length){
+				arr.push(t[i])
+			}
+		}
+		console.log(arr);
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+		// 方法三：利用对象属性不能重复，如果重复后面的会覆盖前面的
+		var t = [90,8,34,8,2,39,87,34,22,10];
+		console.log(t);
+ 
+		var h = {};
+		for (var i = 0; i<t.length; i++){
+			var str = t[i].toString();
+			h[str] = t[i]
+		}
+ 
+		var arr =[];
+		for (var m in h){
+			arr.push(h[m]);
+		}
+		console.log(arr);
