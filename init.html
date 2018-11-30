@@ -13,6 +13,14 @@
   <title></title>
 </head>
 <body>
+  <script>
+        // 获取屏幕宽度
+        if(window.innerWidth){
+            var winWidth = window.innerWidth;
+        }else if((document.body)&&(document.body.clientWidth)){
+            var winWidth = document.body.clientWidth;
+        }
+    </script>
 
 </body>
 </html>
