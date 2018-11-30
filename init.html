@@ -22,5 +22,59 @@
         }
     </script>
 
+  
+    <!-- ===== video start ===== -->
+		<video width="750" height="422" id="whVideo" controls webkit-playsinline x5-playsinline playsinline style="background: #000;">
+			<source src="./video/1.mp4" type="video/mp4">
+		</video>
+		<script>
+			$(function(){
+				// 动态设置 video 的宽高
+				var videoWidth = $('#content').width();
+				var videoHeight = videoWidth*1080/1920;
+				$('video').attr({'width':videoWidth,'height':videoHeight});				
+
+				// 隐藏播放控制条，并且用点击 video 节点的时候 控制暂停和播放
+				var v = document.getElementById("whVideo");
+				var vPaused = v.paused;
+				if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+					// $(document).one('touchstart',function(){
+					// 	if(vPaused == true){
+					// 		v.play();
+					// 	}
+					// });
+					var touchstartTimes = 0;
+					$(v).on('touchstart', function(){
+						touchstartTimes++;
+						if(touchstartTimes){
+							$('video').attr('controls',null);
+						}
+
+						var vPaused = v.paused;
+						if(vPaused == true){
+							v.play();
+						}else{
+							v.pause();
+						}
+					});
+				}else{
+					// $(document).one('click',function(){
+					// 	if(vPaused == true){
+					// 		v.play();
+					// 	}
+					// });
+					$(v).on('click', function(){
+						var vPaused = v.paused;
+						if(vPaused == true){
+							v.play();
+						}else{
+							v.pause();
+						}
+					});
+				}
+				
+			})
+		</script>
+		<!-- ===== video end ===== -->
 </body>
 </html>
