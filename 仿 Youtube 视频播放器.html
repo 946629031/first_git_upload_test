@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>仿 Youtube 视频播放器</title>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
+</head>
+<body>
+
+
+
+<!-- ===== video start ===== -->
+<div class="videoElement-parent">
+	<video width="750" height="422" id="videoElement" controls webkit-playsinline x5-playsinline playsinline>
+		<!-- <source src="http://video.gztata.com/video/1.mp4" type="video/mp4"> -->
+		<source src="E:\25-前端后台ThinkPHP开发整站\TP1-1.mp4"
+		type="video/mp4">
+	</video>
+	<div class="video-msg"></div>
+</div>
+<script>
+    $(function(){
+        // 点击 video 的时候 控制暂停和播放
+        var videoElement = document.getElementById("videoElement");
+        var vPaused = videoElement.paused;
+        if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+            $(videoElement).on('touchstart', function(){
+                var vPaused = v.paused;
+                if(vPaused == true){
+                    videoElement.play();
+                }else{
+                    videoElement.pause();
+                }
+            });
+        }else{
+            $(videoElement).on('click', function(){
+                var vPaused = videoElement.paused;
+                if(vPaused == true){
+                    videoElement.play();
+                }else{
+                    videoElement.pause();
+                }
+            });
+        }
+
+
+		var videoPlayRateElement = document.getElementsByClassName('video-msg')[0];
+		// 封装提示框函数，传入参数和值
+		function tellMsgWindow(cansu, value){
+			videoPlayRateElement.innerHTML = cansu + ': ' + value;
+			videoPlayRateElement.style.opacity = 1;
+			setTimeout(function(){
+				videoPlayRateElement.style.opacity = '0';
+			},1000);
+		}
+
+		document.onkeydown = function(e){		// 对整个文档监听键盘事件
+			var keyNum = window.event ? e.keyCode : e.which;	// 获取被按下的键值
+			
+			// 监听方向键←
+			if(keyNum == 37){
+				videoElement.currentTime -= 5;
+				tellMsgWindow('currentTime',-5);
+
+			// 监听方向键→
+			}else if(keyNum == 39){
+				videoElement.currentTime += 5;
+				tellMsgWindow('currentTime',+5);
+
+			// 监听空格键
+			}else if(keyNum == 32){
+				var vPaused = videoElement.paused;
+				if(vPaused == true){
+					videoElement.play()
+				}else{
+					videoElement.pause()
+				}
+
+			// 监听数字0键
+			}else if(keyNum == 96 || keyNum == 48){
+				videoElement.currentTime = 0;
+
+			// 监听方向键↑  控制音量
+			}else if(keyNum == 38){				
+				if(videoElement.volume+0.08<1){	  // 兼容控制，因为 volume 只能在 [0,1] 之间
+					videoElement.volume += 0.08;	// 音量控制
+				}else{
+					videoElement.volume = 1;
+				}
+				tellMsgWindow('volume',videoElement.volume.toFixed(2)*100);
+
+			// 监听方向键↓  控制音量
+			}else if(keyNum == 40){				
+				if(videoElement.volume-0.08>0){	  // 兼容控制，因为 volume 只能在 [0,1] 之间
+					videoElement.volume -= 0.08;	// 音量控制
+				}else{
+					videoElement.volume = 0;
+				}
+				tellMsgWindow('volume',videoElement.volume.toFixed(2)*100);
+
+			// 监听方向键[  控制倍速播放	
+			}else if(keyNum == 219){
+				videoElement.playbackRate -= 0.5;
+				tellMsgWindow('playbackRate',videoElement.playbackRate);
+
+			// 监听方向键]  控制倍速播放
+			}else if(keyNum == 221){
+				videoElement.playbackRate += 0.5;
+				tellMsgWindow('playbackRate',videoElement.playbackRate);
+
+			}
+		}
+
+
+
+
+		// 监听滚轮事件，控制音量
+		// 博客地址：https://blog.csdn.net/u014205965/article/details/46045099
+        function onMouseWheel(ev) {/*当鼠标滚轮事件发生时，执行一些操作*/
+            var ev = ev || window.event;
+            var down = true; // 定义一个标志，当滚轮向下滚时，执行一些操作
+                down = ev.wheelDelta?ev.wheelDelta<0:ev.detail>0;
+            if(down){
+				if(videoElement.volume-0.08>0){	  // 兼容控制，因为 volume 只能在 [0,1] 之间
+					videoElement.volume -= 0.08;	// 音量控制
+				}else{
+					videoElement.volume = 0;
+				}
+				tellMsgWindow('volume',videoElement.volume.toFixed(2)*100);
+            }else{
+				if(videoElement.volume+0.08<1){	  // 兼容控制，因为 volume 只能在 [0,1] 之间
+					videoElement.volume += 0.08;	// 音量控制
+				}else{
+					videoElement.volume = 1;
+				}
+				tellMsgWindow('volume',videoElement.volume.toFixed(2)*100);
+            }
+            if(ev.preventDefault){/*FF 和 Chrome*/
+                ev.preventDefault();// 阻止默认事件
+            }
+            return false;
+        }
+        addEvent(videoElement,'mousewheel',onMouseWheel);
+        addEvent(videoElement,'DOMMouseScroll',onMouseWheel);
+		function addEvent(obj,xEvent,fn) {
+			if(videoElement.attachEvent){
+				videoElement.attachEvent('on'+xEvent,fn);
+			}else{
+				videoElement.addEventListener(xEvent,fn,false);
+			}
+		}
+
+
+    })
+</script>
+<style>
+	body{ display: flex; justify-content: center; background: #000;}
+	.ytp-chrome-bottom{ margin: 0 auto;}
+	.videoElement-parent{
+		position: relative;
+	}
+	.video-msg{
+		opacity: 0;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		border-radius: 6px;
+		padding: 10px;
+		transform: translate(-50%,-50%);
+		color: #fff;
+		background-color: rgba(0, 0, 0, .3);
+		transition: all 1s;
+	}
+</style>
+<!-- ===== video end ===== -->
+
+
+</body>
+</html>
